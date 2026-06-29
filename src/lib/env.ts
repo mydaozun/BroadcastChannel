@@ -62,7 +62,3 @@ export function parseCsvList(value = ''): string[] {
     .map(item => item.trim())
     .filter(Boolean)
 }
-export const BLOCK_KEYWORDS = (import.meta.env.BLOCK_KEYWORDS || '')
-  .split(',')
-  .map(k => k.trim())
-  .filter(Boolean);
