@@ -76,10 +76,15 @@ const skipLinkText = 'Skip to main content'
         tagsPathname={tagsPathname}
       />
     </SiteHeader>
-    <main id="main-content">
-      <slot />
-    </main>
-    <SiteFooter />
+    <div class="layout-wrapper">
+      <main id="main-content">
+        <slot />
+      </main>
+      
+      <aside class="sidebar">
+        <SiteFooter />
+      </aside>
+    </div>
     <BackToTop />
     <Fragment set:html={FOOTER_INJECT} />
   </body>
