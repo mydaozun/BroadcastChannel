@@ -90,26 +90,27 @@
     border-top: 1px dashed var(--border-color);
   }
 
-/* ==================== 左右两栏布局（加强版） ==================== */
+/* ==================== 左右两栏布局（最终修复版） ==================== */
 .layout-wrapper {
   display: flex !important;
-  gap: 4rem !important;
+  gap: 3.5rem !important;
   margin-top: 2rem !important;
   align-items: flex-start !important;
   justify-content: space-between !important;
   width: 100% !important;
+  max-width: none !important;
 }
 
 main#main-content {
   flex: 1 !important;
   min-width: 0 !important;
-  max-width: 720px !important;     /* 限制主内容宽度，让右侧更靠右 */
+  max-width: 680px !important;     /* 控制主内容宽度 */
 }
 
 .sidebar {
   width: 340px !important;
   flex-shrink: 0 !important;
-  margin-left: auto !important;    /* 关键：强制靠右 */
+  margin-left: auto !important;
   position: sticky !important;
   top: 2rem !important;
   display: flex !important;
@@ -122,13 +123,16 @@ main#main-content {
   max-width: 320px !important;
   margin: 0 auto !important;
   padding: 1.8rem 1.5rem !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  background: var(--background-color) !important;
 }
 
-/* 移动端 */
+/* 移动端适配 */
 @media (max-width: 1024px) {
   .layout-wrapper {
     flex-direction: column !important;
-    gap: 2rem !important;
+    gap: 2.5rem !important;
   }
   .sidebar {
     width: 100% !important;
