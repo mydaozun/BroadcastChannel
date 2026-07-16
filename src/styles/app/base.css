@@ -90,7 +90,7 @@
     border-top: 1px dashed var(--border-color);
   }
 
-  /* ==================== 左右两栏布局 ==================== */
+/* 左右布局 + 右侧 Footer 与搜索框居中对齐 */
 .layout-wrapper {
   display: flex;
   gap: 2.5rem;
@@ -98,31 +98,32 @@
   align-items: flex-start;
 }
 
-/* 左侧主内容区 */
 main#main-content {
   flex: 1;
   min-width: 0;
 }
 
-/* 右侧侧边栏 */
 .sidebar {
-  width: 320px;           /* 可自行调整宽度 */
+  width: 320px;
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
+  display: flex;
+  justify-content: center;     /* 让 Footer 水平居中 */
 }
 
-/* Footer 在侧边栏中的样式优化 */
+/* Footer 本身也居中 */
 .site-footer {
-  text-align: left;
-  margin-top: 0;
+  text-align: center;          /* 内容居中 */
+  width: 100%;
+  margin: 0 auto;
   padding: 1.8rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--background-color);
 }
 
-/* 手机端自动变成上下排列 */
+/* 移动端适配 */
 @media (max-width: 1024px) {
   .layout-wrapper {
     flex-direction: column;
@@ -130,6 +131,7 @@ main#main-content {
   .sidebar {
     width: 100%;
     position: static;
+    justify-content: center;
   }
 }
 }
