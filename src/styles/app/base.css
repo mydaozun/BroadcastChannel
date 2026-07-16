@@ -89,4 +89,47 @@
     border: 0;
     border-top: 1px dashed var(--border-color);
   }
+
+  /* ==================== 左右两栏布局 ==================== */
+.layout-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+/* 左侧主内容区 */
+main#main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 右侧侧边栏 */
+.sidebar {
+  width: 320px;           /* 可自行调整宽度 */
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+}
+
+/* Footer 在侧边栏中的样式优化 */
+.site-footer {
+  text-align: left;
+  margin-top: 0;
+  padding: 1.8rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--background-color);
+}
+
+/* 手机端自动变成上下排列 */
+@media (max-width: 1024px) {
+  .layout-wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+}
 }
