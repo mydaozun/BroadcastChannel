@@ -93,23 +93,25 @@
 /* 左右布局 + 右侧 Footer 与搜索框居中对齐 */
 .layout-wrapper {
   display: flex;
-  gap: 2.5rem;
+  gap: 3.5rem;
   margin-top: 2rem;
   align-items: flex-start;
+  justify-content: space-between; /* 关键：让两侧尽量分开 */
 }
 
 main#main-content {
   flex: 1;
   min-width: 0;
+  max-width: 680px;               /* 限制主内容最大宽度，让右侧更靠右 */
 }
 
+/* 右侧侧边栏 - 往右移 */
 .sidebar {
   width: 320px;
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
-  display: flex;
-  justify-content: center;     /* 让 Footer 水平居中 */
+  margin-left: auto;              /* 关键：自动推到最右 */
 }
 
 /* Footer 本身也居中 */
