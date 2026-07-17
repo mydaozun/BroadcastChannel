@@ -111,7 +111,10 @@ main#main-content {
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
-  margin-left: auto;              /* 关键：自动推到最右 */
+  display: flex;
+  flex-direction: column;        /* 改为垂直布局 */
+  align-items: stretch;          /* 关键：子元素撑满宽度 */
+  justify-content: flex-start;   /* 取消居中 */
 }
 
 /* Footer 美化 */
