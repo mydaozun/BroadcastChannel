@@ -116,18 +116,18 @@ main#main-content {
 
 /* Footer 美化 */
 .site-footer {
-  text-align: center;
-  width: 100%;           /* 确保占满 sidebar 宽度 */
-  margin: 0 auto;
+  text-align: center;          /* 内容居中 */
+  width: 100%;
+  max-width: 100%;             /* 防止溢出 */
+  margin: 1.5rem auto 0;       /* 改用 auto 居中，更稳定 */
   padding: 1.8rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--background-color);
   
-  /* 新增：强制左对齐边框 */
+  /* 关键修复：让左侧边框与上方内容对齐 */
   box-sizing: border-box;
-  margin-left: 0 !important;   /* 关键：消除居中偏移 */
-  padding-left: 1.5rem;        /* 与上方搜索框/内容区 padding 对齐 */
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
