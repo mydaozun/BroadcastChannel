@@ -117,11 +117,18 @@ main#main-content {
 /* Footer 美化 */
 .site-footer {
   text-align: center;
-  margin-top: 0;
+  width: 100%;           /* 确保占满 sidebar 宽度 */
+  margin: 0 auto;
   padding: 1.8rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--background-color);
+  
+  /* 新增：强制左对齐边框 */
+  box-sizing: border-box;
+  margin-left: 0 !important;   /* 关键：消除居中偏移 */
+  padding-left: 1.5rem;        /* 与上方搜索框/内容区 padding 对齐 */
+  padding-right: 1.5rem;
 }
 
 /* 移动端适配 */
