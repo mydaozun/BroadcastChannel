@@ -104,19 +104,21 @@ main#main-content {
   max-width: 680px;
 }
 
-/* 右侧侧边栏 - 强制让 footer 左对齐 */
+/* 右侧侧边栏 - 强制 footer 左对齐 */
 .sidebar {
   width: 320px;
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
-  align-self: flex-start;           /* 关键修复 */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;           /* 关键：让 footer 撑满整个 sidebar 宽度 */
 }
 
-/* Footer - 左侧边框对齐 */
+/* Footer - 左侧边框对齐上方内容 */
 .site-footer {
   text-align: center;
-  width: 100%;
+  width: 100% !important;
   margin: 1.5rem 0 0 0;
   padding: 1.8rem 1.5rem;
   border: 1px solid var(--border-color);
@@ -124,7 +126,7 @@ main#main-content {
   background: var(--background-color);
   box-sizing: border-box;
   
-  /* 强制左侧对齐 */
+  /* 最高优先级强制左对齐 */
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
