@@ -93,45 +93,40 @@
 /* ==================== 左右两栏布局 ==================== */
 .layout-wrapper {
   display: flex;
-  gap: 3.5rem;                    /* 加大间距 */
+  gap: 3.5rem;
   margin-top: 2rem;
   align-items: flex-start;
-  justify-content: space-between; /* 关键：让两侧尽量分开 */
 }
 
 main#main-content {
   flex: 1;
   min-width: 0;
-  max-width: 680px;               /* 限制主内容最大宽度，让右侧更靠右 */
+  max-width: 680px;
 }
 
-/* 右侧侧边栏 - 往右移 */
+/* 右侧侧边栏 */
 .sidebar {
   width: 320px;
   flex-shrink: 0;
   position: sticky;
   top: 2rem;
-  display: flex;
-  flex-direction: column;        /* 改为垂直布局 */
-  align-items: stretch;          /* 关键：子元素撑满宽度 */
-  justify-content: flex-start;   /* 取消居中 */
+  align-self: flex-start;     /* 关键：靠左对齐 sidebar 内容 */
 }
 
-/* Footer 美化 */
+/* Footer 美化 - 强制左侧对齐 */
 .site-footer {
-  text-align: center;          /* 内容居中 */
+  text-align: center;
   width: 100%;
-  max-width: 100%;             /* 防止溢出 */
-  margin: 1.5rem auto 0;       /* 改用 auto 居中，更稳定 */
+  margin: 1.5rem 0 0 0;        /* 去掉 auto */
   padding: 1.8rem 1.5rem;
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--background-color);
-  
-  /* 关键修复：让左侧边框与上方内容对齐 */
   box-sizing: border-box;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  
+  /* 强制左对齐 + 更高优先级 */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* 移动端适配 */
@@ -143,7 +138,6 @@ main#main-content {
   .sidebar {
     width: 100%;
     position: static;
-    margin-left: 0;
   }
 }
 }
